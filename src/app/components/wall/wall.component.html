@@ -1,0 +1,40 @@
+<div class="container pt-20">
+  <div class="row">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-primary" (click)="AddTodo(todoText)" >Add</button>
+      </div>
+      <input type="text" class="form-control" placeholder="Add new row" (keyup.enter)="AddTodo(todoText)"  #todoText>
+    </div>
+  </div>
+
+  <div class="row pt-20" *ngIf="todos.length; else myTemp">
+    <div class="panel-heading">Things to do</div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Make</th>
+          <th scope="col">Create Date</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let todo of todos; let i = index">
+          <th> {{i + 1}} </th>
+          <td>{{ todo.text }}</td>
+          <td> {{todo.createdDate | date: 'dd.MM.yyyy / hh:mm:ss '}} </td>
+          <td>
+            <button class="delete-icon" (click)="Remove(todoText)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #myTemp>
+    <div class="alert alert-success" role="alert">
+        Add to do
+      </div>
+</ng-template>

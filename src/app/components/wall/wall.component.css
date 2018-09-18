@@ -1,0 +1,27 @@
+tr:nth-child(even) {background: #fbfafa}
+tr:nth-child(odd) {background: #FFF}
+
+.panel-heading {
+  background-color: #c8ced0;
+  float: left;
+  width: 100%;
+  padding: 1em;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.alert-success {
+  background-color: #a6adb5;
+}
+.delete-icon {
+  background-image: url('../../../assets/delete-icon.svg');
+  height: 25px;
+  width: 25px;
+  background-size: 77%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0.5em;
+}
